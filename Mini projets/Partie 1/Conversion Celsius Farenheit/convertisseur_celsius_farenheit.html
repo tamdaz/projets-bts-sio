@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Convertisseur Celsius &lt;=>&gt; Farenheit</title>
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1>Convertisseur Celsius &lt;=&gt; Farenheit</h1>
+        <label>
+            Degrés celsius : 
+            <input oninput="convertirCelsiusEnFarenheit()" type="number" id="inputCelsius" value="1" />
+        </label>
+        <br />
+        <br />
+        <label>
+            Degrés Farenheit : 
+            <input oninput="convertirFarenheitEnCelsius()" type="number" id="inputFarenheit" value="1" />
+        </label>
+
+        <script src="convertisseur_celsius_farenheit.js"></script>
+    </body>
+</html>

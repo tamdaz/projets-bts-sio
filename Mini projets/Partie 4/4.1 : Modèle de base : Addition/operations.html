@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calculatrice</title>
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1>Calculatrice</h1>
+        
+        <label>
+            Valeur A : 
+            <input type="number" id="valueA" placeholder="12" />
+        </label>
+        <br />
+        +
+        <br />
+        <label>
+            Valeur B : 
+            <input type="number" id="valueB" placeholder="24" />
+        </label>
+        <br />
+        <br />
+        <button id="button">
+            Calculer
+        </button>
+        <br />
+        <br />
+        <label>
+            Résultat : 
+            <input id="valueResult" readonly />
+        </label>
+        
+        <script src="operation.js"></script>
+    </body>
+</html>

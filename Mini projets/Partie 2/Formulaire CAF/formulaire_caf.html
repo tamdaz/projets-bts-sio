@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Formulaire CAF</title>
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1>Formulaire CAF</h1>
+
+        <form id="formulaire">
+            <fieldset>
+                <legend>Choisir un genre : </legend>
+                <label>
+                    <input type="radio" name="genre" value="F" />
+                    Madame
+                </label>
+                <br />
+                <label>
+                    <input type="radio" name="genre" value="M" />
+                    Monsieur
+                </label>
+            </fieldset>
+            <br />
+            <label>
+                Nom : 
+                <input type="text" id="inputNom" />
+            </label>
+            <br />
+            <br />
+            <label>
+                Prénom : 
+                <input type="text" id="inputPrenom" />
+            </label>
+            <br />
+            <br />
+            <label>
+                Code postal :
+                <input type="number" id="inputCP" />
+            </label>
+            <br />
+            <br />
+            <label>
+                Mot de passe :
+                <input type="password" id="inputMDP" />
+            </label>
+            <br />
+            <br />
+            <label>
+                Confirmer le mot de passe :
+                <input type="password" id="inputCMDP" />
+            </label>
+            <br />
+            <button type="submit">Envoyer</button>
+        </form>
+        
+        <script src="formulaire_caf.js"></script>
+    </body>
+</html>

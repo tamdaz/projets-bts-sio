@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Convertisseur pouce &lt;=>&gt; cm</title>
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1>Convertisseur pouce &lt;=&gt; cm</h1>
+        <label>
+            Centimètres : 
+            <input oninput="convertirCmEnPouces()" type="number" id="inputCm" value="1" />
+        </label>
+        <br />
+        <br />
+        <label>
+            Pouces : 
+            <input oninput="convertirPoucesEnCm()" type="number" id="inputPouces" value="1" />
+        </label>
+
+        <script src="convertisseur_pouce_cm.js"></script>
+    </body>
+</html>
