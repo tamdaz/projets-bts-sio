@@ -44,6 +44,14 @@ const listErrors = document.getElementById('listErrors');
 formulaire.addEventListener('submit', (e) => {
     e.preventDefault();
 
+    validateForm();
+})
+
+/**
+ * Fonction qui permet de valider tous les champs.
+ * (genre, nom, prénom, code postal, mdp et confirmation du mdp).
+ */
+function validateForm() {
     listErrors.innerHTML = "";
 
     let genre = null;
@@ -70,14 +78,16 @@ formulaire.addEventListener('submit', (e) => {
     if (nom !== null && nom.length !== 0) {
         if (nom[0] !== nom[0].toUpperCase())
             listErrors.innerHTML += "<li style='color: red'>La première lettre du nom doit être en majuscule.</li>"
-    } else
+    } else {
         listErrors.innerHTML += "<li style='color: red'>Le nom est obligatoire.</li>"
+    }
 
     if (prenom !== null && prenom.length !== 0) {
         if (prenom[0] !== prenom[0].toUpperCase())
             listErrors.innerHTML += "<li style='color: red'>La première lettre du prénom doit être en majuscule.</li>"
-    } else
+    } else {
         listErrors.innerHTML += "<li style='color: red'>Le prénom est obligatoire.</li>"
+    }
 
     if (cp !== null) {
         if (isNaN(cp))
@@ -85,21 +95,25 @@ formulaire.addEventListener('submit', (e) => {
         
         if (cp.length !== 5 && !Number.isInteger(cp))
             listErrors.innerHTML += "<li style='color: red'>Le code postal doit avoir exactement 5 chiffres.</li>"
-    } else
+    } else {
         listErrors.innerHTML += "<li style='color: red'>Code postal obligatoire.</li>"
+
+    }
 
     if (mdp !== null) {
         if (mdp.length < 8)
             listErrors.innerHTML += "<li style='color: red'>Le mot de passe doit contenir au moins 8 caractères.</li>"
-    } else
+    } else {
         listErrors.innerHTML += "<li style='color: red'>Mot de passe obligatoire.</li>"
+    }
 
     if (cmdp !== null) {
         if (mdp !== cmdp)
             listErrors.innerHTML += "<li style='color: red'>Les mots de passe ne correspondent pas.</li>"
-    } else
+    } else {
         listErrors.innerHTML += "<li style='color: red'>Mot de passe à confirmer est obligatoire.</li>"
+    }
 
     if (listErrors.innerHTML === "")
         listErrors.innerHTML += "<li style='color: green'>Pas d'erreurs dans le formulaire.</li>"
-})
+}
