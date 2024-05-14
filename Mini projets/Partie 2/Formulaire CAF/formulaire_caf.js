@@ -73,47 +73,58 @@ function validateForm() {
     ];
 
     if (genre === null)
-        listErrors.innerHTML += "<li style='color: red'>Il est obligatoire de choisir le genre: Madame ou Monsieur.</li>"
+        addMessage("Il est obligatoire de choisir le genre: Madame ou Monsieur");
 
     if (nom !== null && nom.length !== 0) {
         if (nom[0] !== nom[0].toUpperCase())
-            listErrors.innerHTML += "<li style='color: red'>La première lettre du nom doit être en majuscule.</li>"
+            addMessage("La première lettre du nom doit être en majuscule");
     } else {
-        listErrors.innerHTML += "<li style='color: red'>Le nom est obligatoire.</li>"
+        addMessage("Le nom est obligatoire");
     }
 
     if (prenom !== null && prenom.length !== 0) {
         if (prenom[0] !== prenom[0].toUpperCase())
-            listErrors.innerHTML += "<li style='color: red'>La première lettre du prénom doit être en majuscule.</li>"
+            addMessage("La première lettre du prénom doit être en majuscule");
     } else {
-        listErrors.innerHTML += "<li style='color: red'>Le prénom est obligatoire.</li>"
+        addMessage("Le prénom est obligatoire");
     }
 
     if (cp !== null) {
         if (isNaN(cp))
-            listErrors.innerHTML += "<li style='color: red'>Le code postal ne doit pas comporter de lettres, ni de caractères spéciaux.</li>"
+            addMessage("Le code postal ne doit pas comporter de lettres, ni de caractères spéciaux");
         
         if (cp.length !== 5 && !Number.isInteger(cp))
-            listErrors.innerHTML += "<li style='color: red'>Le code postal doit avoir exactement 5 chiffres.</li>"
+            addMessage("Le code postal doit avoir exactement 5 chiffres");
     } else {
-        listErrors.innerHTML += "<li style='color: red'>Code postal obligatoire.</li>"
-
+        addMessage("Code postal obligatoire");
     }
 
     if (mdp !== null) {
         if (mdp.length < 8)
-            listErrors.innerHTML += "<li style='color: red'>Le mot de passe doit contenir au moins 8 caractères.</li>"
+            addMessage("Le mot de passe doit contenir au moins 8 caractères");
     } else {
-        listErrors.innerHTML += "<li style='color: red'>Mot de passe obligatoire.</li>"
+        addMessage("Mot de passe obligatoire");
     }
 
     if (cmdp !== null) {
         if (mdp !== cmdp)
-            listErrors.innerHTML += "<li style='color: red'>Les mots de passe ne correspondent pas.</li>"
+            addMessage("Les mots de passe ne correspondent pas");
     } else {
-        listErrors.innerHTML += "<li style='color: red'>Mot de passe à confirmer est obligatoire.</li>"
+        addMessage("Mot de passe à confirmer est obligatoire");
     }
 
     if (listErrors.innerHTML === "")
         listErrors.innerHTML += "<li style='color: green'>Pas d'erreurs dans le formulaire.</li>"
 }
+
+/**
+ * Fonction qui permet d'ajouter un message de succès ou d'erreur sous forme de liste.
+ * 
+ * @param {string} text 
+ */
+function addMessage(text, status = 'error') {
+    if (status === 'error')
+        listErrors.innerHTML += "<li style='color: red'>" + text + "</li>"
+    if (status === 'success')
+        listErrors.innerHTML += "<li style='color: green'>" + text + "</li>"
+} 
