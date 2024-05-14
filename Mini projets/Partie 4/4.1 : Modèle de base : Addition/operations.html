@@ -3,36 +3,39 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Calculatrice</title>
+        <title>Calculatrice (addition uniquement)</title>
 
         <link rel="stylesheet" href="style.css" />
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     </head>
     <body>
-        <h1>Calculatrice</h1>
+        <h1>Calculatrice (addition uniquement)</h1>
         
         <label>
             Valeur A : 
-            <input type="number" id="valueA" placeholder="12" />
+            <input class="form-control" type="number" id="valueA" placeholder="12" />
         </label>
         <br />
         +
         <br />
         <label>
             Valeur B : 
-            <input type="number" id="valueB" placeholder="24" />
+            <input class="form-control" type="number" id="valueB" placeholder="24" />
         </label>
         <br />
         <br />
-        <button id="button">
+        <button class="btn btn-primary" id="button">
             Calculer
         </button>
         <br />
         <br />
         <label>
             Résultat : 
-            <input id="valueResult" readonly />
+            <input class="form-control" id="valueResult" readonly />
         </label>
         
         <script src="operation.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

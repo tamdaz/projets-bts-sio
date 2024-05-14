@@ -6,20 +6,23 @@
         <title>Convertisseur Celsius &lt;=>&gt; Farenheit</title>
 
         <link rel="stylesheet" href="style.css" />
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     </head>
     <body>
         <h1>Convertisseur Celsius &lt;=&gt; Farenheit</h1>
         <label>
             Degrés celsius : 
-            <input oninput="convertirCelsiusEnFarenheit()" type="number" id="inputCelsius" value="1" />
+            <input class="form-control" oninput="convertirCelsiusEnFarenheit()" type="number" id="inputCelsius" value="1" />
         </label>
         <br />
         <br />
         <label>
             Degrés Farenheit : 
-            <input oninput="convertirFarenheitEnCelsius()" type="number" id="inputFarenheit" value="1" />
+            <input class="form-control" oninput="convertirFarenheitEnCelsius()" type="number" id="inputFarenheit" value="1" />
         </label>
 
         <script src="convertisseur_celsius_farenheit.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

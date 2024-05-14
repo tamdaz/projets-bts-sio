@@ -6,6 +6,8 @@
         <title>Formulaire CAF</title>
 
         <link rel="stylesheet" href="style.css" />
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     </head>
     <body>
         <h1>Formulaire CAF</h1>
@@ -14,48 +16,44 @@
             <fieldset>
                 <legend>Choisir un genre : </legend>
                 <label>
-                    <input type="radio" name="genre" value="F" />
+                    <input class="form-check-input" type="radio" name="genre" value="F" />
                     Madame
                 </label>
                 <br />
                 <label>
-                    <input type="radio" name="genre" value="M" />
+                    <input class="form-check-input" type="radio" name="genre" value="M" />
                     Monsieur
                 </label>
             </fieldset>
             <br />
             <label>
                 Nom : 
-                <input type="text" id="inputNom" />
+                <input class="form-control" type="text" id="inputNom" />
             </label>
-            <br />
-            <br />
-            <label>
+            <label style="margin-left: 16px;">
                 Prénom : 
-                <input type="text" id="inputPrenom" />
+                <input class="form-control" type="text" id="inputPrenom" />
             </label>
-            <br />
-            <br />
-            <label>
+            <label style="margin-left: 16px;">
                 Code postal :
-                <input type="number" id="inputCP" />
+                <input class="form-control" type="number" id="inputCP" />
             </label>
             <br />
             <br />
             <label>
                 Mot de passe :
-                <input type="password" id="inputMDP" />
+                <input class="form-control" type="password" id="inputMDP" />
             </label>
-            <br />
-            <br />
-            <label>
+            <label style="margin-left: 16px;">
                 Confirmer le mot de passe :
-                <input type="password" id="inputCMDP" />
+                <input class="form-control" type="password" id="inputCMDP" />
             </label>
             <br />
-            <button type="submit">Envoyer</button>
+            <br />
+            <button class="btn btn-primary" type="submit">Envoyer</button>
         </form>
         
         <script src="formulaire_caf.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
