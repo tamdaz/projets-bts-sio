@@ -34,12 +34,17 @@ const inputMDP = document.getElementById('inputMDP');
 const inputCMDP = document.getElementById('inputCMDP');
 
 /**
+ * @type {HTMLUListElement}
+ */
+const listErrors = document.getElementById('listErrors');
+
+/**
  * @param {SubmitEvent} e
  */
 formulaire.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    console.clear();
+    listErrors.innerHTML = "";
 
     let genre = null;
 
@@ -59,42 +64,42 @@ formulaire.addEventListener('submit', (e) => {
         inputMDP.value, inputCMDP.value,
     ];
 
-    if (genre === null) {
-        console.error("Il est obligatoire de choisir le genre: Madame ou Monsieur.")
-    }
+    if (genre === null)
+        listErrors.innerHTML += "<li style='color: red'>Il est obligatoire de choisir le genre: Madame ou Monsieur.</li>"
 
     if (nom !== null && nom.length !== 0) {
         if (nom[0] !== nom[0].toUpperCase())
-            console.error("La première lettre du nom doit être en majuscule.")
-    } else {
-        console.error("Le nom est obligatoire")
-    }
+            listErrors.innerHTML += "<li style='color: red'>La première lettre du nom doit être en majuscule.</li>"
+    } else
+        listErrors.innerHTML += "<li style='color: red'>Le nom est obligatoire.</li>"
 
     if (prenom !== null && prenom.length !== 0) {
         if (prenom[0] !== prenom[0].toUpperCase())
-            console.error("La première lettre du prénom doit être en majuscule.")
-    } else {
-        console.error("Le prénom est obligatoire")
-    }
+            listErrors.innerHTML += "<li style='color: red'>La première lettre du prénom doit être en majuscule.</li>"
+    } else
+        listErrors.innerHTML += "<li style='color: red'>Le prénom est obligatoire.</li>"
 
     if (cp !== null) {
+        if (isNaN(cp))
+            listErrors.innerHTML += "<li style='color: red'>Le code postal ne doit pas comporter de lettres, ni de caractères spéciaux.</li>"
+        
         if (cp.length !== 5 && !Number.isInteger(cp))
-            console.error("Le code postal doir avoir exactement 5 chiffres.")
-    } else {
-        console.error("Code postal obligatoire")
-    }
+            listErrors.innerHTML += "<li style='color: red'>Le code postal doit avoir exactement 5 chiffres.</li>"
+    } else
+        listErrors.innerHTML += "<li style='color: red'>Code postal obligatoire.</li>"
 
     if (mdp !== null) {
         if (mdp.length < 8)
-            console.error("Le mot de passe doit contenir au moins 8 caractères")
-    } else {
-        console.error("Mot de passe obligatoire")
-    }
+            listErrors.innerHTML += "<li style='color: red'>Le mot de passe doit contenir au moins 8 caractères.</li>"
+    } else
+        listErrors.innerHTML += "<li style='color: red'>Mot de passe obligatoire.</li>"
 
     if (cmdp !== null) {
         if (mdp !== cmdp)
-            console.error("Les mots de passe ne correspondent pas")
-    } else {
-        console.error("Mot de passe à confirmer est obligatoire")
-    }
+            listErrors.innerHTML += "<li style='color: red'>Les mots de passe ne correspondent pas.</li>"
+    } else
+        listErrors.innerHTML += "<li style='color: red'>Mot de passe à confirmer est obligatoire.</li>"
+
+    if (listErrors.innerHTML === "")
+        listErrors.innerHTML += "<li style='color: green'>Pas d'erreurs dans le formulaire.</li>"
 })
